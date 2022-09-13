@@ -15,9 +15,6 @@
 			"include": "#components"
 		},
 		{
-			"include": "#members"
-		},
-		{
 			"include": "#identifiers"
 		},
 		{
@@ -130,16 +127,6 @@
 						"name": "entity.name.class"
 					}
 				}	
-			}]
-		},
-		"members": {
-			"patterns": [{
-				"match": "([a-zA-Z_][\\w.]*)\\s*:",
-				"captures": {
-					"1": {
-						"name": "entity.other.attribute-name"
-					}
-				}
 			}]
 		},
 		"identifiers": {
