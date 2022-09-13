@@ -2,10 +2,11 @@
   "name": "flecs-lang",
   "displayName": "Flecs",
   "description": "Syntax highlighting for flecs",
+  "publisher": "flecs-hub",
   "author": {
     "name": "Sander Mertens"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.71.0"
