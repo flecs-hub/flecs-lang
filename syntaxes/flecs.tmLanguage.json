@@ -1,0 +1,165 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Flecs",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#components"
+		},
+		{
+			"include": "#members"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "using"
+			}, {
+				"begin": "(with)\\b",
+				"beginCaptures": {
+					"1": {
+						"name": "keyword.control"
+					}
+				},
+				"end": "{",
+				"patterns": [{
+					"match": "[a-zA-Z_][\\w.]*",
+					"name": "entity.name.class"
+				}]
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line",
+				"match": "(//).*$\\n?"
+			}, {
+				"name": "comment.block",
+				"begin": "\\s*+(\\/\\*)",
+				"end": "\\*\\/",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.comment.begin.c"
+					}
+				},
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.end.c"
+					}
+				}
+			}, {
+				"name": "comment.block.documentation",
+				"match": "\\@.*\n?"
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.double.flecs",
+				"begin": "\"",
+				"end": "\"",
+				"patterns": [
+					{
+						"name": "constant.character.escape.flecs",
+						"match": "\\\\."
+					}
+				]
+			}, {
+				"name": "string.quoted.other",
+				"begin": "`",
+				"end": "`",
+				"patterns": [
+					{
+						"name": "constant.character.escape.flecs",
+						"match": "\\\\."
+					}
+				]
+			}]
+		},
+		"components": {
+			"patterns": [{
+				"match": "(-)\\s*([a-zA-Z_][\\w.]*)",
+				"captures": {
+					"1": {
+						"name": "keyword"
+					},
+					"2": {
+						"name": "entity.name.class"
+					}
+				}
+			}, {
+				"match": "(-)\\s*\\(([a-zA-Z_][\\w.]*)\\s*\\,\\s*([a-zA-Z_][\\w.]*)\\s*\\)",
+				"captures": {
+					"1": {
+						"name": "keyword"
+					},
+					"2": {
+						"name": "entity.name.class"
+					},
+					"3": {
+						"name": "entity.name.class"
+					}
+				}
+			}, {
+				"match": "([a-zA-Z_][\\w.]*)\\s+[a-zA-Z_][\\w.]*",
+				"captures": {
+					"1": {
+						"name": "entity.name.class"
+					}
+				}	
+			}, {
+				"match": "[a-zA-Z_][\\w.]*\\s+:\\s+([a-zA-Z_][\\w.]*)",
+				"captures": {
+					"1": {
+						"name": "entity.name.class"
+					}
+				}	
+			}]
+		},
+		"members": {
+			"patterns": [{
+				"match": "([a-zA-Z_][\\w.]*)\\s*:",
+				"captures": {
+					"1": {
+						"name": "entity.other.attribute-name"
+					}
+				}
+			}]
+		},
+		"identifiers": {
+			"patterns": [{
+				"name": "entity.name",
+				"match": "[a-zA-Z_][a-zA-Z0-9_]*"
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"match": "-?[0-9e.]+"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword",
+				"match": "[-:,?!]"
+			}]
+		}
+	},
+	"scopeName": "source.flecs"
+}
