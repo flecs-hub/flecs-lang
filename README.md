@@ -7,7 +7,7 @@ This extension adds syntax highlighting to vscode for files with the `.flecs` ex
 
 ## Resources
 - [Flecs repository](https://github.com/SanderMertens/flecs)
-- [Language examples](https://github.com/SanderMertens/flecs/tree/master/examples/plecs)
+- [Examples](https://github.com/SanderMertens/flecs/tree/master/examples/plecs)
 - [Online editor](https://flecs.dev/explorer)
 
 ## Release Notes
@@ -21,4 +21,6 @@ This extension adds syntax highlighting to vscode for files with the `.flecs` ex
 - Fixed issue with member syntax being applied to entities.
 - Updated README
 
+## v1.0.2
 
+- Add const keyword

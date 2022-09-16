@@ -28,7 +28,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control",
-				"match": "using"
+				"match": "using|const"
 			}, {
 				"begin": "(with)\\b",
 				"beginCaptures": {
@@ -144,7 +144,7 @@
 		"operators": {
 			"patterns": [{
 				"name": "keyword",
-				"match": "[-:,?!]"
+				"match": "[:,?!]"
 			}]
 		}
 	},
