@@ -12,3 +12,7 @@
 ## v1.0.2
 
 - Add const keyword
+
+## v1.0.3
+
+- Add variable syntax

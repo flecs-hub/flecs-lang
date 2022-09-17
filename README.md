@@ -24,3 +24,7 @@ This extension adds syntax highlighting to vscode for files with the `.flecs` ex
 ## v1.0.2
 
 - Add const keyword
+
+## v1.0.3
+
+- Add variable syntax
